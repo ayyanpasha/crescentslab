@@ -37,87 +37,87 @@ export const Process = () => {
   return (
     <>
       {/* MOBILE */}
-      <div className="block md:hidden">
+      <div className="block lg:hidden">
         {processes.map((process, index) => (
-            <motion.div
-            className="relative  p-8 md:p-12 shadow-lg max-w-6xl mx-auto w-full pt-20 pb-20"
-            style={{ borderTop: '1px solid rgb(70, 70, 70)', backgroundColor: 'rgb(5, 5, 5)'}}
-          >          
-              {/* Mobile */}
-              <div className="block md:hidden">
-                <div className="flex flex-row items-center">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-2">
-                      <span className="text-2xl text-white">(Step {index + 1})</span>
-                    </div>
-                    <h3 className="text-5xl font-bold text-white mb-2">{process.title}</h3>
+          <motion.div
+            className="relative  p-8 lg:p-12 shadow-lg max-w-6xl mx-auto w-full pt-20 pb-20"
+            style={{ borderTop: '1px solid rgb(70, 70, 70)', backgroundColor: 'rgb(5, 5, 5)' }}
+          >
+            {/* Mobile */}
+            <div className="block lg:hidden">
+              <div className="flex flex-row items-center">
+                <div className="flex-1">
+                  <div className="flex items-center mb-2">
+                    <span className="text-2xl text-white">(Step {index + 1})</span>
                   </div>
-                  <div className="ml-4">
-                    <img
-                      src={process.image}
-                      alt={process.title}
-                      className="max-w-[70px] w-full h-auto rounded filter grayscale"
-                    />
-                  </div>
+                  <h3 className="text-5xl font-bold text-white mb-2">{process.title}</h3>
                 </div>
-                <div className="px-4 pt-5">
-                  <p className="text-white text-lg font-small">{process.description}</p>
+                <div className="ml-4">
+                  <img
+                    src={process.image}
+                    alt={process.title}
+                    className="max-w-[70px] w-full h-auto rounded filter grayscale"
+                  />
+                </div>
+              </div>
+              <div className="px-4 pt-5">
+                <p className="text-white text-lg font-small">{process.description}</p>
+                <div
+                  className="mt-4 pt-5"
+                  onClick={() => setOpenDropdown(index === openDropdown ? null : index)}
+                >
                   <div
-                    className="mt-4 pt-5"
-                    onClick={() => setOpenDropdown(index === openDropdown ? null : index)}
+                    className="bg-black border-t-2 border-b-2 cursor-pointer pt-4 pb-4"
+                    style={{ borderColor: 'rgb(70, 70, 70)' }}
                   >
-                    <div
-                      className="bg-black border-t-2 border-b-2 cursor-pointer pt-4 pb-4"
-                      style={{ borderColor: 'rgb(70, 70, 70)' }}
-                    >
-                      <h4 className="text-2xl font-semibold text-white mb-2 flex justify-between items-center">
-                        {process.dropdown.title}
-                        <span
-                          className={`transform transition-transform duration-300 ${openDropdown === index ? 'rotate-45' : ''
-                            }`}
-                        >
-                          +
-                        </span>
-                      </h4>
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: openDropdown === index ? 'auto' : 0, opacity: openDropdown === index ? 1 : 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="overflow-hidden"
+                    <h4 className="text-2xl font-semibold text-white mb-2 flex justify-between items-center">
+                      {process.dropdown.title}
+                      <span
+                        className={`transform transition-transform duration-300 ${openDropdown === index ? 'rotate-45' : ''
+                          }`}
                       >
-                        <ul className="list-disc list-inside text-gray-300">
-                          {process.dropdown.dropdownPoints.map((point, idx) => (
-                            <li key={idx} className="py-2 text-lg">{point}</li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    </div>
+                        +
+                      </span>
+                    </h4>
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: openDropdown === index ? 'auto' : 0, opacity: openDropdown === index ? 1 : 0 }}
+                      transition={{ duration: 0.5 }}
+                      className="overflow-hidden"
+                    >
+                      <ul className="list-disc list-inside text-gray-300">
+                        {process.dropdown.dropdownPoints.map((point, idx) => (
+                          <li key={idx} className="py-2 text-lg">{point}</li>
+                        ))}
+                      </ul>
+                    </motion.div>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
         ))}
       </div>
 
       {/* DESKTOP */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div className="relative">
           {processes.map((process, index) => (
             <div
               key={index}
               className="w-full h-screen sticky top-0 flex justify-center"
-              style={{ zIndex: index, backgroundColor: 'rgb(5, 5, 5)', paddingTop: '10%',borderTop: '1px solid rgb(70, 70, 70)' }}
+              style={{ zIndex: index, backgroundColor: 'rgb(5, 5, 5)', paddingTop: '10%', borderTop: '1px solid rgb(70, 70, 70)' }}
 
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="relative bg-black rounded-2xl p-8 md:p-12 shadow-lg max-w-6xl mx-auto w-full"
+                className="relative bg-black rounded-2xl p-8 lg:p-12 shadow-lg max-w-6xl mx-auto w-full"
               >
 
                 {/* Desktop */}
-                <div className="hidden md:flex flex-row items-start">
+                <div className="hidden lg:flex flex-row items-start">
                   <div className="pr-4">
                     <div className="flex items-center mb-2">
                       <span className="text-2xl text-white">(Step {index + 1})</span>
