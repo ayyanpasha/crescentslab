@@ -3,30 +3,33 @@ import { useState } from 'react';
 
 const services = [
     {
-        title: "AI-Powered Web Apps",
-        description: "Next.js-based solutions with integrated AI capabilities",
-        features: ["Real-time analytics", "GenAI integrations", "Scalable architecture"],
-        image: require(`../asset/images/aiwebapp.png`)
+      "title": "AI-Powered Applications",
+      "subTitle": "Intelligent Digital Experiences",
+      "description": "Deliver personalized, intuitive experiences that adapt to users, boosting engagement and satisfaction. Stay ahead of competitors with AI-powered web and mobile apps that elevate your digital presence.",
+      "image": require('../asset/images/aiwebapp.png')
     },
     {
-        title: "Smart Mobile Apps",
-        description: "React Native cross-platform solutions with ML Kit",
-        features: ["Offline-first", "AI-enhanced UX", "Biometric auth"],
-        image: require(`../asset/images/smartmobileapp.png`)
+      "title": "Custom LLM Deployment",
+      "subTitle": "Adaptive Language Solutions",
+      "description": "Empower your team with enhanced decision-making, improved productivity, and faster responses. Drive smarter growth, unlock actionable insights, and stay ahead of the competition with solutions tailored to your business needs.",
+      "image": require('../asset/images/smartmobileapp.png')
     },
     {
-        title: "GenAI Services",
-        description: "Custom LLM deployments & AI automation",
-        features: ["ChatGPT integration", "Voice synthesis", "Workflow automation"],
-        image: require(`../asset/images/genaiservices.png`)
+      "title": "Autonomous Workflow Systems",
+      "subTitle": "Seamless Process Efficiency",
+      "description": "Optimize workflows with intelligent automation, freeing up time for strategic tasks. Achieve faster, error-free operations that scale effortlessly, improving productivity and consistency.",
+      "image": require('../asset/images/genaiservices.png')
     },
     {
-        title: "AI Phone Systems",
-        description: "NLP-powered call automation",
-        features: ["Voice bots", "Sentiment analysis", "Multi-language support"],
-        image: require(`../asset/images/aiphonesystems.png`)
+      "title": "Vision Intelligence",
+      "subTitle": "Insightful Visual Analytics",
+      "description": "Extract actionable insights from visual data to optimize decision-making, security, and efficiency. Use AI-powered computer vision to transform images and videos into real-time operational improvements.",
+      "image": require('../asset/images/aiphonesystems.png')
     }
-];
+  ]
+  
+  
+  ;
 
 // ... existing imports and services array ...
 
@@ -136,26 +139,12 @@ export const Services = () => {
                             </div>
                             
                             <div className="relative z-20 p-8 md:p-12 h-full flex flex-col justify-end">
-                                <h3 className="text-3xl font-bold text-white mb-6">
-                                    {services[activeService].title}
+                                <h3 className="text-3xl font-medium text-white mb-6">
+                                    {services[activeService].subTitle}
                                 </h3>
-                                <p className="text-gray-200 mb-8 text-lg">
+                                <p className="text-white mb-8 text-md md:text-lg">
                                     {services[activeService].description}
                                 </p>
-                                <ul className="space-y-4">
-                                    {services[activeService].features.map((feature, i) => (
-                                        <motion.li
-                                            key={i}
-                                            initial={{ opacity: 0, x: -10 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: 0.2 + (i * 0.1) }}
-                                            className="flex items-center space-x-3 text-gray-200"
-                                        >
-                                            <span className="text-neon-cyan">▹</span>
-                                            <span>{feature}</span>
-                                        </motion.li>
-                                    ))}
-                                </ul>
                             </div>
                         </motion.div>
                     </div>
