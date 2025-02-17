@@ -126,7 +126,7 @@ export const Services = () => {
                             transition={{ duration: 0.5 }}
                             className="relative h-[400px] md:h-[600px] lg:h-full"
                         >
-                            <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                            <div className="absolute inset-0 overflow-hidden rounded-2xl md:rounded-br-none md:rounded-bl-none">
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80 z-10" />
                                 <img 
                                     src={services[activeService].image} 
