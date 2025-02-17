@@ -126,7 +126,7 @@ export const Hero = () => {
                                     });
                                 }}
                             >
-                                <span className="relative z-10 text-lg">Work with us</span>
+                                <span className="relative z-10 text-md md:text-lg">Work with us</span>
                             </a>
                             
                             <a className="group px-10 py-5 rounded-full border border-neon-cyan text-neon-cyan font-semibold 
@@ -139,7 +139,7 @@ export const Hero = () => {
                                                });
                                            }}
                             >
-                                <span className="text-lg">View Our Services</span>
+                                <span className="text-md md:text-lg">View Our Services</span>
                             </a>
                         </motion.div>
                     </div>
