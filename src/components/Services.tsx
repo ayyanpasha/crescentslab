@@ -58,9 +58,9 @@ export const Services = () => {
                 <div className="w-px h-full bg-gradient-to-b from-transparent via-neon-cyan/20 to-transparent opacity-50" />
             </div>
 
-            <div className="container mx-auto px-3 relative z-10 md:px-6">
-                <div className="bg-white rounded-2xl p-2 md:p-12 pt-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-7xl mx-auto h-full">
+            <div className="container mx-auto px-3 md:px-6 relative z-10">
+                <div className="bg-white rounded-2xl p-3 pt-8 md:p-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 max-w-7xl mx-auto h-full">
                         {/* Left Column - Intro + Services List */}
                         <div className="space-y-4 md:space-y-16">
                             {/* Introduction */}
@@ -88,7 +88,7 @@ export const Services = () => {
                                     whileInView={{ opacity: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.4, duration: 0.6 }}
-                                    className="text-[#64748b] max-w-xl text-md md:text-lg"
+                                    className="text-lg text-[#64748b] max-w-xl"
                                 >
                                     Each problem is looked at from a fresh lens to provide you with a solution that 
                                     solves your specific requirements and integrates with your existing infrastructure
@@ -105,7 +105,7 @@ export const Services = () => {
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1, duration: 0.6 }}
                                         onClick={() => setActiveService(index)}
-                                        className={`cursor-pointer p-2 transition-all duration-300 relative`}
+                                        className={`cursor-pointer p-2 md:p-4 transition-all duration-300 relative`}
                                     >
                                         <h3 className={`text-xl font-semibold transition-colors duration-300
                                             ${activeService === index ? 'font-bold' : 'text-[#475569]'}`}>
@@ -126,7 +126,7 @@ export const Services = () => {
                             transition={{ duration: 0.5 }}
                             className="relative h-[400px] md:h-[600px] lg:h-full"
                         >
-                            <div className="absolute inset-0 overflow-hidden rounded-2xl md:rounded-br-none md:rounded-bl-none">
+                            <div className="absolute inset-0 rounded-2xl overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80 z-10" />
                                 <img 
                                     src={services[activeService].image} 
